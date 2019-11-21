@@ -1,8 +1,4 @@
 // my_predictor.h
-// This file contains a sample my_predictor class.
-// It is a simple 32,768-entry gshare with a history length of 15.
-// Note that this predictor doesn't use the whole 32 kilobytes available
-// for the CBP-2 contest; it is just an example.
 
 class my_update : public branch_update {
 public:
@@ -22,7 +18,7 @@ public:
 		// BR_CONDITIONAL == 1
 		// Checking to make sure it is a valid branch
 		if (b.br_flags & BR_CONDITIONAL) {
-			// b.address[6:2] & 0b0001_1111
+			// b.address[9:2] & 2^8-1
 			u.index = (b.address >> 2) & ((1<<TABLE_BITS)-1);
 
 			// 00 <= table[i] <= 11
@@ -41,6 +37,7 @@ public:
 		if (bi.br_flags & BR_CONDITIONAL) {
 
 			// 00 <= c <= 11
+			// 2-bit predictor
 			unsigned char *c = &table[((my_update*)u)->index];
 			if (taken) {
 				if (*c == 0) *c = 1;
