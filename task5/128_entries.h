@@ -11,8 +11,8 @@ public:
 
 class my_predictor : public branch_predictor {
 public:
-#define HISTORY_LENGTH	3 // Keep track of the last HISTORY_LENGTH branches
-#define TABLE_BITS	6
+#define HISTORY_LENGTH	4 // Keep track of the last HISTORY_LENGTH branches
+#define TABLE_BITS	7
 	my_update u;
 	branch_info bi;
 	unsigned int branch_history[1<<TABLE_BITS]; // keeps track of history for different branches
