@@ -1,0 +1,35 @@
+#!/bin/bash
+
+rm task2.txt
+
+echo "================== (0,2) Predictor, 64 BHT Entries ==================" >> task2.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task2/64_entries.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task2.txt
+echo " " >> task2.txt
+
+echo "================== (0,2) Predictor, 128 BHT Entries ==================" >> task2.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task2/128_entries.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task2.txt
+echo " " >> task2.txt
+
+echo "================== (0,2) Predictor, 256 BHT Entries ==================" >> task2.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task2/256_entries.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task2.txt
+echo " " >> task2.txt
+
+

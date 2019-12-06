@@ -1,0 +1,45 @@
+#!/bin/bash
+
+rm task1.txt
+
+echo "==================== (0,1) Predictor ====================" >> task1.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task1/0_1.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task1.txt
+echo " " >> task1.txt
+
+echo "==================== (0,2) Predictor ====================" >> task1.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task1/0_2.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task1.txt
+echo " " >> task1.txt
+
+echo "==================== (0,3) Predictor ====================" >> task1.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task1/0_3.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task1.txt
+echo " " >> task1.txt
+
+echo "==================== (0,4) Predictor ====================" >> task1.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task1/0_4.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task1.txt
+echo " " >> task1.txt
+
+

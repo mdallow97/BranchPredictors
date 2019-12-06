@@ -1,0 +1,35 @@
+#!/bin/bash
+
+rm task3.txt
+
+echo "=================== (1,2) Correlating Predictor ===================" >> task3.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task3/1_2.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task3.txt
+echo " " >> task3.txt
+
+echo "=================== (2,2) Correlating Predictor ===================" >> task3.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task3/2_2.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task3.txt
+echo " " >> task3.txt
+
+echo "=================== (4,2) Correlating Predictor ===================" >> task3.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task3/4_2.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task3.txt
+echo " " >> task3.txt
+
+
