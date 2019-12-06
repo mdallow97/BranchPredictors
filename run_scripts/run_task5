@@ -1,0 +1,64 @@
+#!/bin/bash
+
+rm task5.txt
+
+echo "=================== Individual Branch (2-bit) History Predictor ===================" >> task5.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task5/2_history.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task5.txt
+echo " " >> task5.txt
+
+echo "=================== Individual Branch (4-bit) History Predictor ===================" >> task5.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task5/4_history.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task5.txt
+echo " " >> task5.txt
+
+echo "=================== Individual Branch (8-bit) History Predictor ===================" >> task5.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task5/8_history.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task5.txt
+echo " " >> task5.txt
+
+
+echo "================= Individual Branch (4-bit) History Predictor, 64 BHT Entries =================" >> task5.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task5/64_entries.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task5.txt
+echo " " >> task5.txt
+
+echo "================= Individual Branch (4-bit) History Predictor, 128 BHT Entries =================" >> task5.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task5/128_entries.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task5.txt
+echo " " >> task5.txt
+
+echo "================= Individual Branch (4-bit) History Predictor, 256 BHT Entries =================" >> task5.txt
+cd src
+rm my_predictor.h
+cp BranchPredictors/task5/256_entries.h my_predictor.h
+make clean
+make all
+cd ..
+./run traces >> task5.txt
+echo " " >> task5.txt
